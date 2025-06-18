@@ -1,0 +1,15 @@
+{
+  "name": "cloudai",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "gunawan092w",
+  "license": "MIT",
+  "description": "Simple Discord AI Bot with Gemini AI",
+  "dependencies": {
+    "@google/genai": "^1.5.1",
+    "discord.js": "^14.20.0"
+  }
+}
