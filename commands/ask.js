@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, InteractionContextType } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { GoogleGenAI } = require('@google/genai');
 const { gemini } = require('../config.json');
 
@@ -21,12 +21,16 @@ module.exports = {
             const response = await ai.models.generateContent({
                 model: "gemini-2.5-flash",
                 contents: interaction.options.getString('message'),
-                config: { systemInstruction: "You are a discord AI bot." },
+                config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
             });
-            await interaction.editReply(`${response.text}\n-# Took ${((ts1-Date.now()) / 1000).toFixed(2)}s to generate!`);
+            const embed = new EmbedBuilder()
+                .setTitle(`CloudAI Response`)
+                .setDescription(response.text)
+                .setFooter({text: `Took ${((ts1-Date.now()) / 1000).toFixed(2)}s to generate - ${response.text.length} characters`})
+            await interaction.editReply({embeds:[embed]});
         } catch (error) {
             console.error(error.message);
-            return interaction.editReply(`I wasn't able to send the message due to API Error, Please check console.`);
+            return interaction.editReply(`I wasn't able to send my response. Check console for more info.`);
         }
 		
 	},
