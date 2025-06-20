@@ -1,9 +1,9 @@
 {
     "bot": {
         "token": "",
-        "clientId": ""
+        "clientId": "",
         "provider": "gemini"
     },
-    "gemini": { "apiKey": "" }
+    "gemini": { "apiKey": "" },
     "openai": { "apiKey": "" }
 }
