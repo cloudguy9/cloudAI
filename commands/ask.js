@@ -3,12 +3,12 @@ const { GoogleGenAI } = require('@google/genai');
 const { OpenAI } = require('openai');
 const { bot, gemini, openai } = require('../config.json');
 
-const gemini-ai = new GoogleGenAI({ apiKey: gemini.apiKey });
-const openai-ai = new OpenAI({apiKey: openai.apiKey});
+const google-ai = new GoogleGenAI({ apiKey: gemini.apiKey });
+const chatgpt-ai = new OpenAI({apiKey: openai.apiKey});
 
 async function geminiResponse() {
         const ts1 = Date.now();
-        const response = await gemini-ai.models.generateContent({
+        const response = await google-ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: interaction.options.getString('message'),
         config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
@@ -16,7 +16,7 @@ async function geminiResponse() {
 
 async function openaiResponse() {
 	const ts1 = Date.now();
-	const response = await openai-ai.chat.completions.create({
+	const response = await chatgpt-ai.chat.completions.create({
 	model: "gpt-3.5-turbo",
 	contents: interaction.options.getString('message'),
 	config: [{ role: 'system', content: 'You are a discord AI bot. Do not exceed 4096 characters.', role: 'user', content: contents }],
