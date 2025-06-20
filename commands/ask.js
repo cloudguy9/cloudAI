@@ -17,12 +17,13 @@ module.exports = {
 	async execute(interaction) {
         await interaction.deferReply();
         try {
+            const ts1 = Date.now();
             const response = await ai.models.generateContent({
                 model: "gemini-2.5-flash",
                 contents: interaction.options.getString('message'),
                 config: { systemInstruction: "You are a discord AI bot." },
             });
-            await interaction.editReply(response.text);
+            await interaction.editReply(`${response.text}\n-# Took ${((ts1-Date.now()) / 1000).toFixed(2)}s to generate!`);
         } catch (error) {
             console.error(error.message);
             return interaction.editReply(`I wasn't able to send the message due to API Error, Please check console.`);
