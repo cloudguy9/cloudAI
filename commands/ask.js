@@ -39,6 +39,8 @@ module.exports = {
 		geminiResponse()
 	    else if bot.provider = "openai" then
 		openaiResponse()
+	    else
+		console.error("Your AI provider in config.json is specified incorrectly, Choose either 'openai' or 'gemini'");
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response.text)
