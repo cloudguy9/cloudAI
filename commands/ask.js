@@ -19,7 +19,7 @@ async function openaiResponse()
 	const response = await openai.chat.completions.create({
 	model: "gpt-3.5-turbo",
 	contents: interaction.options.getString('message'),
-	config: [{ role: 'system', content: 'You are a discord AI bot. Do not exceed 4096 characters.' }],
+	config: [{ role: 'system', content: 'You are a discord AI bot. Do not exceed 4096 characters.', role: 'user', content: contents }],
 	});
 
 module.exports = {
