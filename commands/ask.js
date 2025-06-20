@@ -36,10 +36,10 @@ module.exports = {
         await interaction.deferReply();
         try {
             if bot.provider = "gemini" then {
-		geminiResponse()
+		geminiResponse();
 	    }
 	    else if bot.provider = "openai" then {
-		openaiResponse()
+		openaiResponse();
 	    }
 	    else {
 		console.error("Your AI provider in config.json is specified incorrectly, Choose either 'openai' or 'gemini'");
