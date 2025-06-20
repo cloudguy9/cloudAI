@@ -1,8 +1,26 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { GoogleGenAI } = require('@google/genai');
-const { gemini } = require('../config.json');
+const { OpenAI } = require('openai');
+const { provider, gemini, openai } = require('../config.json');
 
-const ai = new GoogleGenAI({ apiKey: gemini.apiKey });
+const gemini = new GoogleGenAI({ apiKey: gemini.apiKey });
+const openai = new OpenAI({apiKey: openai.apiKey});
+
+async function geminiResponse() {
+        const ts1 = Date.now();
+        const response = await gemini.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: interaction.options.getString('message'),
+        config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
+	});
+
+async function openaiResponse()
+	const ts1 = Date.now();
+	const response = await openai.chat.completions.create({
+	model: "gpt-3.5-turbo",
+	contents: interaction.options.getString('message'),
+	config: [{ role: 'system', content: 'You are a discord AI bot. Do not exceed 4096 characters.' }],
+	});
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -17,12 +35,10 @@ module.exports = {
 	async execute(interaction) {
         await interaction.deferReply();
         try {
-            const ts1 = Date.now();
-            const response = await ai.models.generateContent({
-                model: "gemini-2.5-flash",
-                contents: interaction.options.getString('message'),
-                config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
-            });
+            if provider = "gemini" then
+		geminiResponse()
+	    else if provider = "openai" then
+		openaiResponse()
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response.text)
