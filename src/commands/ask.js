@@ -1,8 +1,8 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { GoogleGenAI } = require('@google/genai');
-const { gemini } = require('../config.json');
+const { gemini } = require('../config');
 
-const ai = new GoogleGenAI({ apiKey: gemini.apiKey });
+const ai = new GoogleGenAI({ apiKey:  gemini.apiKey});
 
 module.exports = {
 	data: new SlashCommandBuilder()
