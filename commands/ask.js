@@ -35,12 +35,15 @@ module.exports = {
 	async execute(interaction) {
         await interaction.deferReply();
         try {
-            if bot.provider = "gemini" then
+            if bot.provider = "gemini" then {
 		geminiResponse();
-	    else if bot.provider = "openai" then 
+	    }
+	    else if bot.provider = "openai" then { 
 		openaiResponse();
-	    else 
+	    }
+	    else {
 		console.error("Your AI provider in config.json is specified incorrectly, Choose either 'openai' or 'gemini'");
+	    }
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response.text)
