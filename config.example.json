@@ -2,6 +2,8 @@
     "bot": {
         "token": "",
         "clientId": ""
+        "provider": "gemini"
     },
     "gemini": { "apiKey": "" }
+    "openai": { "apiKey": "" }
 }
