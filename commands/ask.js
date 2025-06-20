@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { GoogleGenAI } = require('@google/genai');
 const { OpenAI } = require('openai');
-const { provider, gemini, openai } = require('../config.json');
+const { bot, gemini, openai } = require('../config.json');
 
 const gemini = new GoogleGenAI({ apiKey: gemini.apiKey });
 const openai = new OpenAI({apiKey: openai.apiKey});
@@ -35,9 +35,9 @@ module.exports = {
 	async execute(interaction) {
         await interaction.deferReply();
         try {
-            if provider = "gemini" then
+            if bot.provider = "gemini" then
 		geminiResponse()
-	    else if provider = "openai" then
+	    else if bot.provider = "openai" then
 		openaiResponse()
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
