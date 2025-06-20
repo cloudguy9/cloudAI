@@ -3,12 +3,12 @@ const { GoogleGenAI } = require('@google/genai');
 const { OpenAI } = require('openai');
 const { bot, gemini, openai } = require('../config.json');
 
-const gemini = new GoogleGenAI({ apiKey: gemini.apiKey });
-const openai = new OpenAI({apiKey: openai.apiKey});
+const gemini-ai = new GoogleGenAI({ apiKey: gemini.apiKey });
+const openai-ai = new OpenAI({apiKey: openai.apiKey});
 
 async function geminiResponse() {
         const ts1 = Date.now();
-        const response = await gemini.models.generateContent({
+        const response = await gemini=ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: interaction.options.getString('message'),
         config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
@@ -16,7 +16,7 @@ async function geminiResponse() {
 
 async function openaiResponse()
 	const ts1 = Date.now();
-	const response = await openai.chat.completions.create({
+	const response = await openai-ai.chat.completions.create({
 	model: "gpt-3.5-turbo",
 	contents: interaction.options.getString('message'),
 	config: [{ role: 'system', content: 'You are a discord AI bot. Do not exceed 4096 characters.', role: 'user', content: contents }],
@@ -44,7 +44,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response.text)
-                .setFooter({text: `Took ${((ts1-Date.now()) / 1000).toFixed(2)}s to generate - ${response.text.length} characters`})
+                .setFooter({text: `Took ${((ts1-Date.now()) / 1000).toFixed(2)}s to generate - ${response.text.length} characters - Model used = ${response.model}`})
             await interaction.editReply({embeds:[embed]});
         } catch (error) {
             console.error(error.message);
