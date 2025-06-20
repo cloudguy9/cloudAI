@@ -8,7 +8,7 @@ const openai-ai = new OpenAI({apiKey: openai.apiKey});
 
 async function geminiResponse() {
         const ts1 = Date.now();
-        const response = await gemini=ai.models.generateContent({
+        const response = await gemini-ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: interaction.options.getString('message'),
         config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
