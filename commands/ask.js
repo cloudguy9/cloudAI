@@ -14,7 +14,7 @@ async function geminiResponse() {
         config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
 	});
 
-async function openaiResponse()
+async function openaiResponse() {
 	const ts1 = Date.now();
 	const response = await openai-ai.chat.completions.create({
 	model: "gpt-3.5-turbo",
@@ -35,12 +35,15 @@ module.exports = {
 	async execute(interaction) {
         await interaction.deferReply();
         try {
-            if bot.provider = "gemini" then
+            if bot.provider = "gemini" then {
 		geminiResponse()
-	    else if bot.provider = "openai" then
+	    }
+	    else if bot.provider = "openai" then {
 		openaiResponse()
-	    else
+	    }
+	    else {
 		console.error("Your AI provider in config.json is specified incorrectly, Choose either 'openai' or 'gemini'");
+	    }
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response.text)
