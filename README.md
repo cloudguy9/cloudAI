@@ -5,8 +5,9 @@
 
 -> Licensed in MIT
 
-# Screenshot
-![image](https://github.com/user-attachments/assets/2386f222-3222-4003-a16c-632e591d49b8)
-![image](https://github.com/user-attachments/assets/701d0694-8791-450b-87dd-8af9f4ad397b)
+# Screenshot [2025/06/20 Update]
+![image](https://github.com/user-attachments/assets/291e84f3-8f14-4dc2-a673-1fef33c1a364)
+![image](https://github.com/user-attachments/assets/003525a4-0acb-41b2-9591-8827e9059f90)
+(Aww... cute cat innit?)
 
 # You can use it on everywhere! Guilds / DMs / Group Chats
