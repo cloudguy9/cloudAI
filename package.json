@@ -10,6 +10,7 @@
   "description": "Simple Discord AI Bot with Gemini AI",
   "dependencies": {
     "@google/genai": "^1.5.1",
-    "discord.js": "^14.20.0"
+    "discord.js": "^14.20.0",
+    "openai": "^5.6.0"
   }
 }
