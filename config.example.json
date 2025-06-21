@@ -5,5 +5,5 @@
         "provider": "gemini"
     },
     "gemini": { "apiKey": "" },
-    "openai": { "apiKey": "" }
+    "chatgpt": { "apiKey": "" }
 }
