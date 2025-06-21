@@ -7,6 +7,9 @@
         "provider": "gemini",
         "gemini": { "apiKey": "" },
         "chatgpt": { "apiKey": "" },
-        "local": { "ollama_address": "localhost:11434" }
+        "local": {
+            "ollama_address": "localhost:11434",
+            "model": "llama3.2:latest"
+        },
     },
 }
