@@ -54,7 +54,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(airespond)
-                .setFooter({text: `Took ${((timestamp-Date.now()) / 1000).toFixed(2)}s to generate - ${airespond.length} characters - AI Model used: ${airesponse.model}`})
+                .setFooter({text: `Took ${((timestamp-Date.now()) / 1000).toFixed(2)}s to generate - ${airespond.length} characters - AI Model used: ${response.model}`})
             await interaction.editReply({embeds:[embed]});
         } catch (error) {
             console.error(error.message);
