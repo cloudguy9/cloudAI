@@ -40,8 +40,8 @@ module.exports = {
             timestamp = Date.now();
             response = await ollama.chat({
                 model: ai.local.model,
-                //contents: interaction.options.getString('message'),
-                messages: [{ role: 'user', content: interaction.options.getString('message') }],
+                contents: interaction.options.getString('message'),
+                messages: [{ role: 'user', content: contents }],
             }); airespond = response.message.content;
         }; await interaction.deferReply();
         
@@ -54,7 +54,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(airespond)
-                .setFooter({text: `Took ${((timestamp-Date.now()) / 1000).toFixed(2)}s to generate - ${airespond.length} characters`})
+                .setFooter({text: `Took ${((timestamp-Date.now()) / 1000).toFixed(2)}s to generate - ${airespond.length} characters - AI Model used: ${airesponse.model}`})
             await interaction.editReply({embeds:[embed]});
         } catch (error) {
             console.error(error.message);
