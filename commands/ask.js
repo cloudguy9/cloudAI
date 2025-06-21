@@ -45,8 +45,8 @@ module.exports = {
         }; await interaction.deferReply();
         
         try {
-            if(bot.provider == "gemini") { await geminiResponse() }
-            else if (bot.provider == "chatgpt") { await chatgptResponse() }
+            if(ai.provider == "gemini") { await geminiResponse() }
+            else if (ai.provider == "chatgpt") { await chatgptResponse() }
             else if (ai.provider == "local" { await localResponse() }
             else {console.error("AI Provider were set incorrectly in configuration. Choose either 'chatgpt', 'gemini' or 'local'.")};
             
