@@ -1,10 +1,12 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { GoogleGenAI } = require('@google/genai');
 const { OpenAI } = require('openai');
-const { bot, gemini, chatgpt } = require('../config.json');
+const { ai, gemini, chatgpt } = require('../config.json');
+const { Ollama } = require('ollama');
 
-const geminiAI = new GoogleGenAI({ apiKey: gemini.apiKey });
-const chatgptAI = new OpenAI({apiKey: chatgpt.apiKey});
+const geminiAI = new GoogleGenAI({ apiKey: ai.gemini.apiKey });
+const chatgptAI = new OpenAI({apiKey: ai.chatgpt.apiKey});
+const ollama = new Ollama({ host: ai.local.ollama_address });
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -33,12 +35,21 @@ module.exports = {
                 instructions: "You are a discord AI bot. Do not exceed 4096 characters.",
                 input: interaction.options.getString('message')
             }); airespond = response.output_text;
+        }
+        async function localResponse() { 
+            timestamp = Date.now();
+            response = await ollama.chat({
+                model: ai.local.model,
+                //contents: interaction.options.getString('message'),
+                messages: [{ role: 'user', content: interaction.options.getString('message') }],
+            }); airespond = response.message.content;
         }; await interaction.deferReply();
         
         try {
-            if(bot.provider == "gemini") { await geminiResponse() }
-            else if (bot.provider == "chatgpt") { await chatgptResponse() }
-            else {console.error("AI Provider were set incorrectly in configuration. Choose either 'chatgpt' or 'gemini'.")};
+            if(ai.provider == "gemini") { await geminiResponse() }
+            else if (ai.provider == "chatgpt") { await chatgptResponse() }
+            else if (ai.provider == "local") { await localResponse() }
+            else {console.error("AI Provider were set incorrectly in configuration. Choose either 'chatgpt', 'gemini' or 'local'.")};
             
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
