@@ -1,7 +1,7 @@
 const { OpenAI } = require('openai');
 const { ai } = require('../config');
 
-const chatGPT = new OpenAI({apiKey: ai.chatgpt.apiKey});
+const chatgptAI = new OpenAI({apiKey: ai.chatgpt.apiKey});
 
 async function chatgptResponse(prompt) {
     const response = await chatgptAI.responses.create({
