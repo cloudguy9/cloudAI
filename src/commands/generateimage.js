@@ -1,5 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
-
+const fs = require('node:fs')
 const { geminiGenerateImage } = require('../scripts/geminiAPI')
 
 module.exports = {
@@ -13,22 +13,23 @@ module.exports = {
             .setRequired(true),
         ),
     async execute(interaction) {
-        let response;
+        let response; let timestamp; let duration;
         const usrMsg = interaction.options.getString('prompt');
         
         await interaction.deferReply();
         try {
-            response = geminiGenerateImage(usrMsg);
-
-            const buffer = Buffer.from(imageData, "base64");
-            const file = new AttachmentBuilder(buffer, "image.png");
+            timestamp = Date.now();
+            response = await geminiGenerateImage(usrMsg);
+            const file = new AttachmentBuilder(response, {name: 'image.png'});
+            duration = (Date.now() - timestamp) / 1000;
 
             const embed = new EmbedBuilder()
                 .setTitle('CloudAI Generated Image')
-                .setImage('attachment://image.png');
+                .setImage('attachment://image.png')
+                .setFooter({text: `Took ${duration}s to generate!`});
             await interaction.editReply({embeds: [embed], files: [file] });
         } catch (error) {
-            console.error(error.message);
+            console.error(error);
             return interaction.editReply(`I wasn't able to generate your image. Check console for more info.`)
         };
     },

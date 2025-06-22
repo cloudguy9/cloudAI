@@ -19,10 +19,10 @@ async function geminiGenerateImage(prompt) {
     })
 
     for (const part of response.candidates[0].content.parts) {
-        if (part.text) {return part.text}
-        else if (part.inlineData) {
+        //if (part.text) {return part.text}
+        if (part.inlineData) {
             const imageData = part.inlineData.data;
-            const buffer = Buffer.from(imageData, "base64");
+            const buffer = Buffer.from(imageData, "base64")
             return buffer;
         }
     }
