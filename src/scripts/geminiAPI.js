@@ -1,4 +1,4 @@
-const { GoogleGenAI } = require('@google/genai');
+const { GoogleGenAI, Modality } = require('@google/genai');
 const { ai } = require('../config');
 
 const gemini = new GoogleGenAI({ apiKey: ai.gemini.apiKey });
@@ -11,5 +11,21 @@ async function geminiResponse(prompt) {
     }); return response.text;
 };
 
-module.exports = { geminiResponse };
+async function geminiGenerateImage(prompt) {
+    const response = await gemini.models.generateContent({
+        model: "gemini-2.0-flash-preview-image-generation",
+        contents: prompt,
+        config : { responseModalities: [Modality.TEXT, Modality.IMAGE] }
+    })
+
+    for (const part of response.candidates[0].content.parts) {
+        if (part.text) {return part.text}
+        else if (part.inlineData) {
+            const imageData = part.inlineData.data;
+            const buffer = Buffer.from(imageData, "base64");
+            return buffer;
+        }
+    }
+};
+module.exports = { geminiResponse, geminiGenerateImage };
 
