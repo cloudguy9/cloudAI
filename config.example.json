@@ -5,8 +5,15 @@
     },
     "ai" : {
         "provider": "gemini",
-        "gemini": { "apiKey": "" },
-        "chatgpt": { "apiKey": "" },
+        "gemini": {
+            "apiKey": "",
+            "model": "gemini-2.5-flash",
+            "ig_model": "gemini-2.0-flash-preview-image-generation"
+        },
+        "chatgpt": {
+            "apiKey": "",
+            "model": "o4-mini"
+        },
         "local": {
             "ollama_address": "localhost:11434",
             "model": "llama3.2:1b"
