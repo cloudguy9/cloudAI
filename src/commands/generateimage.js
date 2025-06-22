@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
-const fs = require('node:fs')
 const { geminiGenerateImage } = require('../scripts/geminiAPI')
 
 module.exports = {
