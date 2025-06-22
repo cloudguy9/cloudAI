@@ -12,13 +12,13 @@ module.exports = {
         .setDescription('Ask AI about something')
         .setContexts([0, 1, 2])
         .addStringOption(option =>
-            option.setName('message')
+            option.setName('prompt')
             .setDescription('Your message sent to AI')
             .setRequired(true),
         ),
     async execute(interaction) {
         let timestamp; let response; let duration;
-        const usrMsg = interaction.options.getString('message');
+        const usrMsg = interaction.options.getString('prompt');
         
         await interaction.deferReply();
         try {
