@@ -25,7 +25,4 @@ async function deplCmd() {
 
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
 	} catch (error) { console.error(error)}
-};
-
-module.exports = { deplCmd };
-
+}; module.exports = { deplCmd };
