@@ -5,7 +5,7 @@ const gemini = new GoogleGenAI({ apiKey: ai.gemini.apiKey });
 
 async function geminiResponse(prompt) {
     const response = await gemini.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: ai.gemini.model,
         contents: prompt,
         config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters."},
     }); return response.text;
@@ -13,7 +13,7 @@ async function geminiResponse(prompt) {
 
 async function geminiGenerateImage(prompt) {
     const response = await gemini.models.generateContent({
-        model: "gemini-2.0-flash-preview-image-generation",
+        model: ai.gemini.ig_model,
         contents: prompt,
         config : { responseModalities: [Modality.TEXT, Modality.IMAGE] }
     })
