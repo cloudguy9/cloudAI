@@ -6,7 +6,7 @@
 > We haven't tested ChatGPT because we do not have the API Key to test it out.
 > Report through Issues if you find any problem
 >
-> We rely CloudAI on GeminiAI currently. 
+> We rely CloudAI on GeminiAI currently. [Invite CloudAI!](https://discord.com/oauth2/authorize?client_id=1302648298917593120)
 
 # Features
 - **Use it anywhere!** - CloudAI works in Servers / DMs / Groups!
