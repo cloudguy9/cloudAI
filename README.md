@@ -44,14 +44,10 @@
 
 # Screenshot
 ![image](https://github.com/user-attachments/assets/22cd6e12-f9a3-4702-a18c-3dbd2af78ed8)
-
 ![image](https://github.com/user-attachments/assets/d3c70bb4-7da9-4368-baf6-0c7d942b2cc3)
 
-
-
-
 # Community & Support
-- Join [the discord server](https://discord.gg/bKaGvN2cm2) for Support, updates, and discusions.
+- Join [the discord server](https://discord.gg/kpsezgzgv5) for Support, updates, and discusions.
 
 # Contribution
 - We welcome contributions! Feel free to fork the repository, switch to dev branch, make your changes, and submit a pull request to dev branch.
