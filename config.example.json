@@ -14,8 +14,8 @@
             "apiKey": "",
             "model": "o4-mini"
         },
-        "local": {
-            "ollama_address": "localhost:11434",
+        "ollama": {
+            "host": "localhost:11434",
             "model": "llama3.2:1b"
         }
     }

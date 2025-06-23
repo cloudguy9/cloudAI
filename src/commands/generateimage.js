@@ -19,6 +19,11 @@ module.exports = {
         try {
             timestamp = Date.now();
             response = await geminiGenerateImage(usrMsg);
+
+            if (!response || !Buffer.isBuffer(response)) {
+                throw new Error('Invalid or missing buffer from geminiGenerateImage()');
+            }
+            
             const file = new AttachmentBuilder(response, {name: 'image.png'});
             duration = (Date.now() - timestamp) / 1000;
 
