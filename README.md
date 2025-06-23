@@ -51,7 +51,7 @@
 
 
 # Community & Support
-- Join [the discord server](https://discord.gg/bKaGvN2cm2) for Support, updates, and discusions.
+- Join [the discord server](https://discord.gg/jFTZVz6cgV) for Support, updates, and discusions.
 
 # Contribution
 - We welcome contributions! Feel free to fork the repository, switch to dev branch, make your changes, and submit a pull request to dev branch.
