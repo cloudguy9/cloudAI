@@ -50,5 +50,6 @@
 - Join [the discord server](https://discord.gg/kpsezgzgv5) for Support, updates, and discusions.
 
 # Contribution
-- We welcome contributions! Feel free to fork the repository, switch to dev branch, make your changes, and submit a pull request to dev branch.
+- We welcome contributions! Feel free to fork the repository, create new branch (cloudai/my-feature) or switch to dev branch,
+- make your changes, and submit a pull request to dev branch.
 
