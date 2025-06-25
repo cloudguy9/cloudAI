@@ -6,7 +6,7 @@
 > We haven't tested ChatGPT because we do not have the API Key to test it out.
 > Report through Issues if you find any problem
 >
-> We rely CloudAI on GeminiAI currently. 
+> We rely CloudAI on GeminiAI currently. [Invite CloudAI!](https://discord.com/oauth2/authorize?client_id=1302648298917593120)
 
 # Features
 - **Use it anywhere!** - CloudAI works in Servers / DMs / Groups!
@@ -47,7 +47,7 @@
 ![image](https://github.com/user-attachments/assets/d3c70bb4-7da9-4368-baf6-0c7d942b2cc3)
 
 # Community & Support
-- Join [the discord server](https://discord.gg/jFTZVz6cgV) for Support, updates, and discusions.
+- Join [the discord server](https://discord.gg/kpsezgzgv5) for Support, updates, and discusions.
 
 # Contribution
 - We welcome contributions! Feel free to fork the repository, create new branch (cloudai/my-feature) or switch to dev branch,

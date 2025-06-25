@@ -40,7 +40,7 @@ module.exports = {
                 .setFooter({text: `Took ${(duration.toFixed(2))}s to generate - ${response.length} characters`})
             await interaction.editReply({embeds:[embed]});
         } catch (error) {
-            console.error(error.message);
+            console.error(error);
             return interaction.editReply(`I wasn't able to send my response. Check console for more info.`);
         };
     },
