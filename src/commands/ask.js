@@ -13,7 +13,7 @@ module.exports = {
         .setContexts([0, 1, 2])
         .addStringOption(option =>
             option.setName('prompt')
-            .setDescription('Your message sent to AI')
+            .setDescription('Your prompt sent to AI')
             .setRequired(true),
         ),
     async execute(interaction) {
