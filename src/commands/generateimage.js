@@ -1,5 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, AttachmentBuilder } = require('discord.js');
-const { geminiGenerateImage } = require('../scripts/geminiAPI')
+const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -12,29 +11,6 @@ module.exports = {
             .setRequired(true),
         ),
     async execute(interaction) {
-        let response; let timestamp; let duration;
-        const usrMsg = interaction.options.getString('prompt');
-        
-        await interaction.deferReply();
-        try {
-            timestamp = Date.now();
-            response = await geminiGenerateImage(usrMsg);
-
-            if (!response || !Buffer.isBuffer(response)) {
-                throw new Error('Invalid or missing buffer from geminiGenerateImage()');
-            }
-            
-            const file = new AttachmentBuilder(response, {name: 'image.png'});
-            duration = (Date.now() - timestamp) / 1000;
-
-            const embed = new EmbedBuilder()
-                .setTitle('CloudAI Generated Image')
-                .setImage('attachment://image.png')
-                .setFooter({text: `Took ${duration}s to generate!`});
-            await interaction.editReply({embeds: [embed], files: [file] });
-        } catch (error) {
-            console.error(error);
-            return interaction.editReply(`I wasn't able to generate your image. Check console for more info.`)
-        };
+        interaction.reply('This command is deprecated. Use /imagine instead.')
     },
 };

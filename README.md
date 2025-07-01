@@ -6,11 +6,12 @@
 > We haven't tested ChatGPT because we do not have the API Key to test it out.
 > Report through Issues if you find any problem
 >
-> We rely CloudAI on GeminiAI currently. [Invite CloudAI!](https://discord.com/oauth2/authorize?client_id=1302648298917593120)
+> We rely CloudAI on Gemini currently. [Invite CloudAI!](https://discord.com/oauth2/authorize?client_id=1302648298917593120)
 
 # Features
 - **Use it anywhere!** - CloudAI works in Servers / DMs / Groups!
 - **Image Generation** - Generates images based on user prompts with Gemini!
+- **Reply CloudAI through Pings / DMs** - Ping/Reply CloudAI to interact! Also works by DM-ing the bot. (ClydeAI Reference)
 
 # Getting Started
 ### Prerequisites
@@ -40,14 +41,13 @@
 
 # Commands
 - `/ask [prompt]`: Start your conversation w/ AI
-- `/generateimage [prompt]`: Generates an Image based on prompt (Currently this is only available for Gemini)
+- `/prompt [prompt]`: Generates an Image based on prompt (Currently this is only available for Gemini)
 
-# Screenshot
+# Screenshot (07/01/2025 Update)
 ![image](https://github.com/user-attachments/assets/22cd6e12-f9a3-4702-a18c-3dbd2af78ed8)
 ![image](https://github.com/user-attachments/assets/d3c70bb4-7da9-4368-baf6-0c7d942b2cc3)
-
-# Community & Support
-- Join [the discord server](https://discord.gg/kpsezgzgv5) for Support, updates, and discusions.
+![image](https://github.com/user-attachments/assets/2dbb5794-6221-48ef-add6-f6d9790ad017)
+![image](https://github.com/user-attachments/assets/47043c5d-ab9f-4326-bec7-e603f86b27a0)
 
 # Contribution
 - We welcome contributions! Feel free to fork the repository, create new branch (cloudai/my-feature) or switch to dev branch,

@@ -7,7 +7,7 @@ async function geminiResponse(prompt) {
     const response = await gemini.models.generateContent({
         model: ai.gemini.model,
         contents: prompt,
-        config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters."},
+        config: { systemInstruction: "You are a discord AI bot. Do not exceed 4096 characters." },
     }); return response.text;
 };
 
@@ -17,9 +17,7 @@ async function geminiGenerateImage(prompt) {
         contents: prompt,
         config : { responseModalities: [Modality.TEXT, Modality.IMAGE] }
     })
-
     for (const part of response.candidates[0].content.parts) {
-        //if (part.text) {return part.text}
         if (part.inlineData) {
             const imageData = part.inlineData.data;
             const buffer = Buffer.from(imageData, "base64")
