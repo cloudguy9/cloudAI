@@ -12,13 +12,11 @@ module.exports = {
             .setRequired(true),
         ),
     async execute(interaction) {
-        let response; let timestamp; let duration;
         const usrMsg = interaction.options.getString('prompt');
-        
         await interaction.deferReply();
         try {
-            timestamp = Date.now();
-            response = await geminiGenerateImage(usrMsg);
+            const timestamp = Date.now();
+            const response = await geminiGenerateImage(usrMsg);
 
             if (!response || !Buffer.isBuffer(response)) {
                 throw new Error('Invalid or missing buffer from geminiGenerateImage()');

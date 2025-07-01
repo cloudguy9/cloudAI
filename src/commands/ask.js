@@ -1,5 +1,4 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
-
 const { geminiResponse } = require('../scripts/geminiAPI');
 const { chatgptResponse } = require('../scripts/chatgptAPI');
 const { ollamaResponse } = require('../scripts/ollamaAPI')
@@ -17,13 +16,11 @@ module.exports = {
             .setRequired(true),
         ),
     async execute(interaction) {
-        let timestamp; let response; let duration;
         const usrMsg = interaction.options.getString('prompt');
-        
         await interaction.deferReply();
         try {
-            timestamp = Date.now();
-
+            let response;
+            const timestamp = Date.now();
             if(ai.provider == "gemini") { 
                 response = await geminiResponse(usrMsg);
             } else if (ai.provider == "chatgpt") { 
@@ -32,12 +29,12 @@ module.exports = {
                 response = await ollamaResponse(usrMsg); 
             } else {
                 console.error("AI Provider were set incorrectly in configuration. Choose either 'chatgpt', 'gemini', or 'ollama'.")
-            }; duration = (Date.now() - timestamp) / 1000;
-
+            }; 
+            const duration = (Date.now() - timestamp) / 1000;
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)
                 .setDescription(response)
-                .setFooter({text: `Took ${(duration.toFixed(2))}s to generate - ${response.length} characters`})
+                .setFooter({text: `Took ${(duration.toFixed(2))}s to generate - ${response.length} characters`});
             await interaction.editReply({embeds:[embed]});
         } catch (error) {
             console.error(error);
