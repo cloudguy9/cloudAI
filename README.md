@@ -1,13 +1,6 @@
 # cloudai
 <p>Open source Discord AI Bot powered by Gemini, ChatGPT, and Ollama</p>
 
-<!-- https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts -->
-> [!NOTE]
-> We haven't tested ChatGPT because we do not have the API Key to test it out.
-> Report through Issues if you find any problem
->
-> We rely CloudAI on Gemini currently. [Invite CloudAI!](https://discord.com/oauth2/authorize?client_id=1302648298917593120)
-
 # Features
 - **Use it anywhere!** - CloudAI works in Servers / DMs / Groups!
 - **Image Generation** - Generates images based on user prompts with Gemini!
