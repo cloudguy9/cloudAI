@@ -1,14 +1,10 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const { geminiResponse } = require('../scripts/geminiAPI');
-const { chatgptResponse } = require('../scripts/chatgptAPI');
-const { ollamaResponse } = require('../scripts/ollamaAPI')
-
-const { ai } = require('../config');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('ask')
-        .setDescription('Ask AI about something')
+        .setDescription('Ask CloudAI about something!')
         .setContexts([0, 1, 2])
         .addStringOption(option =>
             option.setName('prompt')
@@ -21,15 +17,8 @@ module.exports = {
         try {
             let response;
             const timestamp = Date.now();
-            if(ai.provider == "gemini") { 
-                response = await geminiResponse(usrMsg);
-            } else if (ai.provider == "chatgpt") { 
-                response = await chatgptResponse(usrMsg); 
-            } else if (ai.provider == "ollama") { 
-                response = await ollamaResponse(usrMsg); 
-            } else {
-                console.error("AI Provider were set incorrectly in configuration. Choose either 'chatgpt', 'gemini', or 'ollama'.")
-            }; 
+            response = await geminiResponse(usrMsg);
+
             const duration = (Date.now() - timestamp) / 1000;
             const embed = new EmbedBuilder()
                 .setTitle(`CloudAI Response`)

@@ -2,7 +2,7 @@ const { REST, Routes } = require('discord.js');
 const { bot } = require('../config');
 const fs = require('node:fs');
 
-const cmdFiles = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
+const cmdFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 async function loadCmd() {
     const commands = [];
     for (const file of cmdFiles) {

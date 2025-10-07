@@ -3,20 +3,9 @@
         "token": "",
         "clientId": ""
     },
-    "ai" : {
-        "provider": "gemini",
-        "gemini": {
-            "apiKey": "",
-            "model": "gemini-2.5-flash",
-            "ig_model": "gemini-2.0-flash-preview-image-generation"
-        },
-        "chatgpt": {
-            "apiKey": "",
-            "model": "o4-mini"
-        },
-        "ollama": {
-            "host": "localhost:11434",
-            "model": "llama3.2:1b"
-        }
+    "ai": {
+        "apiKey": "",
+        "model": "gemini-2.5-flash",
+        "ig_model": "gemini-2.0-flash-preview-image-generation"
     }
 }

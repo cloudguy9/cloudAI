@@ -34,15 +34,11 @@
 
 # Commands
 - `/ask [prompt]`: Start your conversation w/ AI
-- `/prompt [prompt]`: Generates an Image based on prompt (Currently this is only available for Gemini)
+- `/imagine [prompt]`: Generates an Image based on prompt (Currently this is only available for Gemini)
 
 # Screenshot (07/01/2025 Update)
 ![image](https://github.com/user-attachments/assets/22cd6e12-f9a3-4702-a18c-3dbd2af78ed8)
 ![image](https://github.com/user-attachments/assets/d3c70bb4-7da9-4368-baf6-0c7d942b2cc3)
 ![image](https://github.com/user-attachments/assets/2dbb5794-6221-48ef-add6-f6d9790ad017)
 ![image](https://github.com/user-attachments/assets/47043c5d-ab9f-4326-bec7-e603f86b27a0)
-
-# Contribution
-- We welcome contributions! Feel free to fork the repository, create new branch (cloudai/my-feature) or switch to dev branch,
-- make your changes, and submit a pull request to dev branch.
 
