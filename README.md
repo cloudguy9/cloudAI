@@ -1,6 +1,10 @@
 # cloudai
 <p>Open source Discord AI Bot powered by Gemini</p>
 
+<!-- https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts -->
+> [!IMPORTANT]
+> This repo has been moved to https://codeberg.org/gunawan092w/cloudai
+
 # Features
 - **Use it anywhere!** - CloudAI works in Servers / DMs / Groups!
 - **Image Generation** - Generates images based on user prompts
